@@ -1,0 +1,2 @@
+"Customer Type","First Name","Middle Name","Last Name",Gender,Birthdate,Age,"Country Code","Contact No","Email Id","Company Name","Landline No",Address,Address2,City_id,State_id,"Tax No","PAN No",Source,"Opening Balance","Balance Side"
+Corporate,Bharati,S,Joshi,Female,11/16/1993,24,`+91,875789249,"bharati j@gmail.com",PWD,2014578,"Pashan Sus Pune",Pune,Pune,2,6789,PSD6789,Telephone,5000,Credit

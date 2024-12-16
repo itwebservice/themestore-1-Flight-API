@@ -1,0 +1,873 @@
+/* -------------------------------------
+      🍔 Components - Variables
+  ------------------------------------- */
+$primary-color: #d67f76;
+$secondary-color: #1f4ca7;
+
+$white: #fff;
+$black: #000;
+
+$bg-color: #f3f6fd;
+$highlight-color: lighten($primary-color, 30%);
+
+$primary-font: "Inter", sans-serif;
+$secondary-font: "Raleway", sans-serif;
+
+/* -------------------------------------
+      Reset Styles
+  ------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-display: swap;
+  font-family: $primary-font;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  overflow-y: auto;
+  height: auto;
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1440px;
+  }
+}
+
+/* -------------------------------------
+      🍔 Components - Header
+  ------------------------------------- */
+.c-header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .header {
+    &-primary {
+      background-color: transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 10px 0;
+    }
+    &-secondary {
+      .navbar-expand-md {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+      .menuBar {
+        display: flex;
+        flex-direction: row;
+        gap: 42px;
+        padding-left: 24px;
+        margin-bottom: 0;
+        list-style-type: none;
+        .menuBar-item {
+          .link {
+            border-bottom: 2px solid transparent;
+            color: $white;
+            font: 600 0.86rem/1rem $secondary-font;
+            padding: 0 0 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+
+            &:hover,
+            &.active {
+              border-bottom-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sectionList {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    & > li {
+      color: $white;
+      display: inline-flex;
+      flex-direction: row;
+      gap: 12px;
+      list-style-type: none;
+      position: relative;
+      margin-right: 25px;
+      .fab {
+        font-size: 0.9rem;
+        line-height: normal;
+      }
+      &::before {
+        background-color: #dbdbdb78;
+        content: "";
+        height: 12px;
+        position: absolute;
+        right: -15px;
+        top: 1px;
+        width: 1px;
+      }
+      .link {
+        color: $white;
+        font-size: 0.84rem;
+        line-height: normal;
+        text-decoration: none;
+      }
+      &:last-child {
+        margin-right: 0;
+        &::before {
+          display: none;
+        }
+      }
+      .c-dropdown {
+        .btn {
+          border: none;
+          color: $white;
+          font-size: 0.84rem;
+          padding: 0 4px;
+        }
+        .dropdown-menu {
+          .dropdown-item {
+            color: $black;
+            font-size: 0.84rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .c-header {
+    display: none;
+  }
+  .c-headerMobile {
+    display: flex;
+  }
+}
+
+.c-headerMobile {
+  align-items: center;
+  background-color: $primary-color;
+  display: flex;
+  gap: 24px;
+  padding: 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+  .hambMenu {
+    background-color: $white;
+    border: 0;
+    display: grid;
+    font-size: 1.8rem;
+    place-items: center;
+    height: 42px;
+    width: 42px;
+    border-radius: 4px;
+  }
+  .logo {
+    flex-grow: 1;
+    img {
+      height: 46px;
+    }
+  }
+  .setting {
+    width: 100px;
+  }
+}
+.mobileSidebarMenu {
+  .offcanvas {
+    &-body {
+      padding: 16px 0;
+    }
+  }
+}
+@media (min-width: 960px) {
+  .c-headerMobile {
+    display: none;
+  }
+  .c-header {
+    display: block;
+  }
+}
+
+/* -------------------------------------
+      🍔 Components - Banner and Filter
+  ------------------------------------- */
+.c-bannerAndFilter {
+  position: relative;
+  padding: 0;
+
+  &.with-image {
+    background: url(../images/banner.png) center no-repeat;
+    background-size: cover;
+    padding: 200px 0 140px 0;
+  }
+
+  .banner_one_text {
+    color: $white;
+    h1 {
+      font: 500 3rem/4rem $secondary-font;
+    }
+    h3 {
+      font: 300 1rem/1.3rem $secondary-font;
+    }
+  }
+}
+
+.c-filterTabs {
+  .nav-tabs {
+    border: 0;
+    gap: 12px;
+    .nav-link {
+      border: 1px solid $primary-color;
+      color: $black;
+      border-radius: 6px;
+      &.filterButton {
+        &.active {
+          background-color: $primary-color;
+          color: $white;
+        }
+      }
+    }
+  }
+  .tab-content {
+    padding: 24px 0 0;
+  }
+}
+
+.filterItemSection {
+  background: $highlight-color;
+  padding: 12px;
+  min-height: 96px;
+  position: relative;
+  border-radius: 10px;
+}
+
+@media (max-width: 960px) {
+  .c-bannerAndFilter {
+    padding: 170px 0 100px 0;
+    .banner_one_text {
+      color: $white;
+      h1 {
+        font: 500 2.4rem/3rem $secondary-font;
+      }
+    }
+  }
+}
+
+.c-filter {
+  margin-top: -150px;
+  z-index: 5;
+  padding-bottom: 40px;
+  position: relative;
+  .filterWrapper {
+    background: $white;
+    padding: 30px;
+    position: relative;
+    min-height: 276px;
+    border-radius: 20px;
+    box-shadow: 4px 14px 28px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 960px) {
+  .c-filter {
+    margin-top: 16px;
+    .filterWrapper {
+      padding: 12px;
+    }
+  }
+}
+
+.roomFilter {
+  align-items: center;
+  border: 1px solid darken($highlight-color, 12%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  height: 42px;
+  padding: 6px;
+  position: relative;
+  border-radius: 6px;
+  span {
+    flex-grow: 1;
+    padding: 0 4px;
+  }
+  i {
+    color: darken($highlight-color, 20%);
+  }
+}
+.c-select {
+  background-color: transparent;
+  border: 1px solid darken($highlight-color, 12%);
+  height: 42px;
+  outline: none;
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* -------------------------------------
+      🍔 Components - Form Elements
+  ------------------------------------- */
+.c-input {
+  height: 42px;
+  padding: 6px;
+  border-radius: 4px;
+  &.transparent {
+    border: 1px solid darken($highlight-color, 12%);
+    background-color: transparent;
+  }
+}
+
+.c-advanceSelect {
+  .select2-container {
+    width: 100% !important;
+    .select2-selection {
+      padding: 6px !important;
+      height: auto !important;
+      position: relative;
+      .select2-selection__arrow {
+        top: calc(50% - 14px);
+        b {
+          border-color: $primary-color transparent transparent transparent;
+        }
+      }
+    }
+  }
+  &.transparent {
+    .select2-container {
+      .select2-selection {
+        border-color: darken($highlight-color, 10%);
+        background-color: transparent;
+        .select2-selection__arrow {
+          b {
+            border-color: darken($highlight-color, 15%) transparent transparent
+              transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-calendar {
+  background-color: transparent;
+  border: 1px solid darken($highlight-color, 12%);
+  height: 42px;
+  border-radius: 4px;
+  .form-control {
+    background-color: transparent;
+    border: 0;
+    padding: 0 8px;
+    height: 42px;
+  }
+  .input-group-addon {
+    display: grid;
+    place-items: center;
+    padding: 6px;
+  }
+
+  &.transparent {
+    .input-group-addon {
+      color: darken($highlight-color, 20%);
+    }
+  }
+}
+.datepicker td,
+.datepicker th {
+  font-size: 0.86rem;
+  padding: 4px;
+  height: 30px;
+  width: 40px;
+
+  &.active {
+    &.active {
+      background-color: $primary-color !important;
+      background-image: none;
+    }
+    &:hover:hover {
+      background-color: $primary-color !important;
+      background-image: none;
+    }
+  }
+}
+
+.c-button {
+  border-color: $primary-color;
+  background-color: $primary-color;
+  color: $white !important;
+  font-size: 0.85rem;
+  &:hover {
+    background-color: darken($primary-color, 5%);
+  }
+
+  &.is-link {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.settingButton {
+  background-color: $secondary-color;
+  border: 0;
+  color: $white;
+  display: grid;
+  line-height: normal;
+  padding: 1px 0 0 1px;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  border-radius: 100px;
+}
+
+/* -------------------------------------
+      🍔 Components - Section
+  ------------------------------------- */
+.c-section {
+  background-color: $white;
+  display: block;
+  padding: 60px 0;
+  position: relative;
+  .heading {
+    display: block;
+    color: $black;
+    margin-bottom: 3rem;
+    position: relative;
+    text-align: center;
+    font: 600 2.3rem/3rem $secondary-font;
+
+    &::after {
+      background-color: $primary-color;
+      position: absolute;
+      bottom: -0.9rem;
+      height: 4px;
+      width: 100px;
+      left: calc(50% - 50px);
+      content: "";
+      border-radius: 50px;
+    }
+  }
+
+  &.type-1 {
+    background: #f3f6fd url("../images/pattern.png") repeat;
+  }
+  &.type-2 {
+    background: $white url("../images/pattern-2.png") repeat;
+  }
+}
+
+@media (max-width: 960px) {
+  .c-section {
+    padding: 30px 0;
+    .heading {
+      font: 500 1.6rem/2rem $secondary-font;
+    }
+  }
+}
+
+/* -------------------------------------
+      🍔 Components - Slider
+  ------------------------------------- */
+.c-slider {
+  .owl-nav {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    margin-top: 1rem;
+    button {
+      background-color: $primary-color !important;
+      color: $white !important;
+      display: grid;
+      font-size: 1.4rem !important;
+      line-height: 1.3rem;
+      height: 2rem;
+      place-items: center;
+      width: 2rem;
+      border-radius: 100px;
+      span {
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+
+  .owl-dots {
+    .owl-dot {
+      background-color: $highlight-color;
+      height: 12px;
+      width: 12px;
+      margin: 0 6px;
+      border-radius: 100px;
+
+      &.active {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.partnerSlider {
+  .owl-nav {
+    display: none;
+  }
+  .partner {
+    text-align: center;
+    img {
+      display: inline-block;
+      max-width: 110px;
+      width: auto !important;
+      filter: opacity(0.5);
+    }
+  }
+}
+
+/* -------------------------------------
+      🍔 Components - Cards 
+  ------------------------------------- */
+.c-card {
+  border: 1px solid #d2d2d275;
+  .card {
+    &-image {
+      max-height: 230px;
+      overflow: hidden;
+      position: relative;
+      img {
+        transition: all ease 0.3s;
+      }
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+      &::before {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.6) 53%,
+          rgba(0, 0, 0, 0.6) 65%
+        );
+        content: "";
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        height: 100px;
+        width: 100%;
+        z-index: 1;
+      }
+      .title {
+        bottom: 12px;
+        color: $white;
+        left: 14px;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+      }
+      .discount {
+        background-color: $white;
+        display: grid;
+        place-items: center;
+        bottom: -16px;
+        right: 14px;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        z-index: 2;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+
+.imageCard {
+  border: 1px solid #d2d2d275;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  img {
+    width: 100%;
+    transition: all ease 0.3s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+    .info {
+      opacity: 1;
+    }
+    &::before {
+      background: rgba(0, 0, 0, 0.5) url("../images/dot-pattern.png") repeat;
+    }
+  }
+  &::before {
+    background: rgba(0, 0, 0, 0.3);
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transition: all ease 0.3s;
+  }
+  .info {
+    background-color: transparent;
+    position: absolute;
+    width: calc(100% - 24px);
+    bottom: 12px;
+    left: 12px;
+    z-index: 2;
+    opacity: 0;
+    transition: all ease 0.3s;
+  }
+  .rating {
+    background-color: $white;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 8px;
+    z-index: 2;
+    border-radius: 3px;
+  }
+}
+
+.c-cta {
+  height: 400px;
+  position: relative;
+  border-radius: 10px;
+  &::before {
+    background-color: rgba(0, 0, 0, 0.3);
+    content: "";
+    height: 400px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  img {
+    left: 0;
+    top: 0;
+    max-height: 400px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    border-radius: 10px;
+  }
+  .infoSection {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    border-radius: 10px;
+  }
+  .ctaSlider {
+    background: $white url("../images/testimonial-quate.png") 20px 100px
+      no-repeat;
+    display: inline-block;
+    padding: 24px;
+    height: 400px;
+    margin-top: 42px;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: -4px -5px 14px rgb(0 0 0 / 8%), 5px 8px 16px rgb(0 0 0 / 8%);
+  }
+}
+
+@media (max-width: 960px) {
+  .c-cta {
+    height: 100%;
+    &::before {
+      display: none;
+    }
+    img {
+      display: none;
+    }
+    .infoSection {
+      .info {
+        display: none;
+      }
+    }
+    .ctaSlider {
+      height: auto;
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+}
+
+/* -------------------------------------
+      🍔 Components - Footer 
+  ------------------------------------- */
+.c-footer {
+  background: $white url("../images/footer-pattern.png") bottom repeat-x;
+  .footer {
+    &-top {
+      padding: 60px 0;
+      .sectionBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .heading {
+          .title {
+            display: inline-block;
+            border-bottom: 2px solid $primary-color;
+            padding-bottom: 4px;
+          }
+        }
+        .body {
+          flex-grow: 1;
+          a {
+            transition: color ease 0.3s;
+            &:hover {
+              color: $primary-color !important;
+            }
+          }
+        }
+      }
+    }
+    &-bottom {
+      padding: 14px 0;
+    }
+  }
+}
+
+/* -------------------------------------
+      Banner Slider
+  ------------------------------------- */
+.c-banner.type-01 {
+  position: relative;
+  height: 500px;
+
+  .info-section {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 30%);
+    height: 100%;
+    width: 60%;
+    z-index: 1;
+  }
+
+  .pageSlider {
+    position: relative;
+    .item {
+      display: block;
+      height: 600px;
+      position: relative;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+
+    .slick-arrow {
+      border: 0;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 20px);
+      height: 40px;
+      width: 100%;
+      z-index: 2;
+
+      &.slick-prev,
+      &.slick-next {
+        background-color: var(--secondary-color);
+        display: grid;
+        font-size: 1.8rem;
+        height: 40px;
+        place-items: center;
+        padding: 0;
+        position: absolute;
+        width: 40px;
+      }
+      &.slick-next {
+        right: 10px;
+        left: auto;
+      }
+      &.slick-prev {
+        left: 10px;
+      }
+    }
+
+    .sliderItem::before {
+      background: url("../images/dot-pattern.png") repeat;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .c-banner.type-01 .info-section {
+    padding: 12px;
+    left: calc(50% - 40%);
+    width: 80%;
+  }
+
+  .c-banner.type-01,
+  .c-banner.type-01 .pageSlider .item,
+  .c-banner.type-01 .pageSlider .sliderItem img {
+    height: auto;
+  }
+}
+
+/* -------------------------------------
+      🍔 Components - Utilities 
+  ------------------------------------- */
+.fs-7 {
+  font-size: 0.85rem;
+}
+.fs-8 {
+  font-size: 0.75rem;
+}
+.color-primary {
+  color: $primary-color;
+}
+.color-secondary {
+  color: $secondary-color !important;
+}
+
+.font-family-primary {
+  font-family: $primary-font;
+}
+
+.font-family-secondary {
+  font-family: $secondary-font !important;
+}
+.mt-md-5 {
+  margin-top: 2.4rem;
+}
+.mh-100 {
+  min-height: 100px;
+}

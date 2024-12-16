@@ -1,0 +1,18 @@
+[08-Nov-2024 15:22:49 Asia/Kolkata] PHP Fatal error:  Uncaught TypeError: fwrite(): Argument #1 ($stream) must be of type resource, bool given in /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php:98
+Stack trace:
+#0 /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php(98): fwrite(false, 'DROP TABLE IF E...')
+#1 /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php(106): backup_itours_db('../backups/08-1...')
+#2 {main}
+  thrown in /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php on line 98
+[08-Nov-2024 15:23:03 Asia/Kolkata] PHP Fatal error:  Uncaught TypeError: fwrite(): Argument #1 ($stream) must be of type resource, bool given in /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php:98
+Stack trace:
+#0 /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php(98): fwrite(false, 'DROP TABLE IF E...')
+#1 /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php(106): backup_itours_db('../backups/08-1...')
+#2 {main}
+  thrown in /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php on line 98
+[08-Nov-2024 15:25:52 Asia/Kolkata] PHP Fatal error:  Uncaught TypeError: fwrite(): Argument #1 ($stream) must be of type resource, bool given in /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php:98
+Stack trace:
+#0 /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php(98): fwrite(false, 'DROP TABLE IF E...')
+#1 /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php(106): backup_itours_db('../backups/08-1...')
+#2 {main}
+  thrown in /home4/itourjh2/public_html/demo-3/crm/view/backup_installer/installer/installer_init.php on line 98
